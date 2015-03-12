@@ -28,6 +28,11 @@ module.exports = function(destination, opts) {
             }
         }
         
+        // Apply function to file destination path
+        if(opts.destPath){
+            rel = opts.destPath(rel);
+        }
+
         fileDestination = destination + '/' + rel;
         
         // Make sure destination exists
